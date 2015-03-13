@@ -1,24 +1,14 @@
 var insert = function(array, rightIndex, value) {
 
-    var temp, i, j;
+    var j;
 
-    for (j=1; j<=rightIndex +1; j++){
+    for(j= rightIndex; j>=0 && array[j]>value; j--){
 
-        i = j - 1;
-
-        temp = array[j];
-
-        while ((i>=0) && (temp<array[i])){
-
-            array[i+1] = array[i];
-
-            i--;
-
-        }
-
-        array[i+1] =temp;
+        array[j+1]= array[j];
 
     }
+
+    array[j+1] = value;
 
 };
 
